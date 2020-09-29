@@ -14,11 +14,17 @@ public class StudentService {
 
     @Autowired
     private StudentMapper studentMapper;
-    public List<StudentEntity> queryStudent() {
+    public List<StudentEntity> queryStudent(Integer id, String name) {
 
-        List<StudentEntity> studentList = studentMapper.queryStudent();
+        List<StudentEntity> studentList = studentMapper.queryStudent(id, name);
         return studentList;
 
+    }
+
+    public List<StudentEntity> queryStudent2(StudentEntity studentEntity) {
+        studentEntity.setUserName("rtdtfcjk");
+        List<StudentEntity>  studentList=studentMapper.queryStudent2(studentEntity);
+        return  studentList;
     }
 
 }

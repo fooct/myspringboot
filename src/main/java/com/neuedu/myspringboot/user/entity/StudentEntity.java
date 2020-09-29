@@ -46,4 +46,7 @@ public class StudentEntity implements Serializable {
     public void setMath(Integer math) {
         this.math = math;
     }
+
+    public void setUserName(String rtdtfcjk) {
+    }
 }
