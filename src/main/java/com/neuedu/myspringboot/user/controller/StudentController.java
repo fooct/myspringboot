@@ -19,7 +19,7 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GetMapping("/queryStudent")
+    @RequestMapping("/queryStudent")
     public List<StudentEntity> queryStudent(Integer id, String name){
 
         System.out.println("进入学生类controller");
@@ -28,7 +28,7 @@ public class StudentController {
 
     }
 
-    @GetMapping("/queryStudent2")
+    @PostMapping("/queryStudent2")
     public List<StudentEntity> queryStudent2(StudentEntity studentEntity) {
         System.out.println("进入学生类controller");
         List<StudentEntity>  studentList= studentService.queryStudent2(studentEntity);

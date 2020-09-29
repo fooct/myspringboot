@@ -32,4 +32,12 @@ mybatis:
     callSettersOnNulls: true
     jdbcTypeForNull: VARCHAR
 
+logging:
+  level:
+    com:
+      neuedu:
+        demo:
+          user:
+            mapper: debug
+
 
