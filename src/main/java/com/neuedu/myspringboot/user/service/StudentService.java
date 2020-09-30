@@ -16,7 +16,8 @@ public class StudentService {
     private StudentMapper studentMapper;
     public List<StudentEntity> queryStudent(Integer id, String name) {
 
-        List<StudentEntity> studentList = studentMapper.queryStudent(id, name);
+//        List<StudentEntity> studentList = studentMapper.queryStudent(id, name);
+        List<StudentEntity> studentList = studentMapper.selectAll();
         return studentList;
 
     }

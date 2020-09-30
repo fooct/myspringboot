@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Mapper
-public interface StudentMapper {
+public interface StudentMapper extends tk.mybatis.mapper.common.Mapper<StudentEntity> {
 
      List<StudentEntity> queryStudent(@Param("id") Integer id, @Param("userName") String username);
      List<StudentEntity> queryStudent2(StudentEntity studentEntity);
