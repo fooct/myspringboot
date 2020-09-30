@@ -48,7 +48,7 @@ public class StudentController {
         return studentList;
     }
 
-    @GetMapping("/saveStudent")
+    @PostMapping("/saveStudent")
     public String saveStudent(StudentEntity studentEntity) {
         log.info("进入学生类controllersave");
         String resultMessage = null;
