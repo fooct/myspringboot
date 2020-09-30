@@ -13,11 +13,12 @@ public class StudentEntity implements Serializable {
     public static final long serialVersionUID = 1L;
     @Id
     private Integer id;
-    private String useName;
+    private String name;
     private Integer chinese;
     private Integer math;
 
-    public static long getSeriaVersionUID() {
+
+    public static long getSerialVersionUID() {
         return serialVersionUID;
     }
 
@@ -29,12 +30,12 @@ public class StudentEntity implements Serializable {
         this.id = id;
     }
 
-    public String getUseName() {
-        return useName;
+    public String getName() {
+        return name;
     }
 
-    public void setUseName(String useName) {
-        this.useName = useName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getChinese() {
@@ -51,8 +52,5 @@ public class StudentEntity implements Serializable {
 
     public void setMath(Integer math) {
         this.math = math;
-    }
-
-    public void setUserName(String rtdtfcjk) {
     }
 }

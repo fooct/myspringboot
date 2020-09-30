@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.neuedu.myspringboot.user.mapper.StudentMapper">
     <select id="queryStudent" resultType="com.neuedu.myspringboot.user.entity.StudentEntity">
-        select id, name, english, math, chinese from student where 1 = 1
+        select id, name, english, chinese, math from student where 1 = 1
         <if test = "id != null">
             and id = #{id}
         </if>
@@ -10,4 +10,16 @@
             and user_name = #{userName}
         </if>
     </select>
+    <select id="queryStudent2" resultType="com.neuedu.myspringboot.user.entity.StudentEntity">
+        select id, name, english, math, chinese
+        <if test="id != null">
+            and id = #{id}
+        </if>
+        <if test="userName != null and userName != ">
+            and user_name = #{userName}
+        </if>
+    </select>
+    <insert id="saveStudent" parameterType="com.neuedu.myspringboot.user.entity.StudentEntity">
+        insert into student(id, name, english, chinese, math) value('8', '张无忌', '85', '52', '38')
+    </insert>
 </mapper>

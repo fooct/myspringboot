@@ -23,9 +23,14 @@ public class StudentService {
     }
 
     public List<StudentEntity> queryStudent2(StudentEntity studentEntity) {
-        studentEntity.setUserName("rtdtfcjk");
         List<StudentEntity>  studentList=studentMapper.queryStudent2(studentEntity);
         return  studentList;
     }
 
+
+    public int saveStudent (StudentEntity studentEntity) {
+
+        return studentMapper.saveStudent(studentEntity);
+
+    }
 }

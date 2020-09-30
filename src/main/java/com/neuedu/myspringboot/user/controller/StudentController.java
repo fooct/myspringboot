@@ -1,6 +1,7 @@
 package com.neuedu.myspringboot.user.controller;
 
 
+import com.neuedu.myspringboot.common.exp.Student;
 import com.neuedu.myspringboot.user.entity.StudentEntity;
 import com.neuedu.myspringboot.user.service.StudentService;
 import lombok.NonNull;
@@ -25,7 +26,7 @@ public class StudentController {
     @RequestMapping("/queryStudent")
     public List<StudentEntity> queryStudent(Integer id, String name){
 
-        log.info("进入学生类controller");
+        log.info("进入学生类controller1");
         log.error("");
         List<StudentEntity> studentList = studentService.queryStudent(id, name);
         return studentList;
@@ -34,7 +35,7 @@ public class StudentController {
 
     @PostMapping("/queryStudent2")
     public List<StudentEntity> queryStudent2(StudentEntity studentEntity) {
-        log.info("进入学生类controller");
+        log.info("进入学生类controller2");
         List<StudentEntity>  studentList= studentService.queryStudent2(studentEntity);
         return studentList;
     }
@@ -42,9 +43,20 @@ public class StudentController {
 
     @GetMapping("/queryStudent3")
     public List<StudentEntity> queryStudent3(@NonNull @RequestParam("id")Integer id, @RequestParam(value = "name",required = false,defaultValue = "张三")String name) {
-        log.info("进入学生类controller");
+        log.info("进入学生类controller3");
         List<StudentEntity>  studentList= studentService.queryStudent(id,name);
         return studentList;
+    }
+
+    @GetMapping("/saveStudent")
+    public String saveStudent(StudentEntity studentEntity) {
+        log.info("进入学生类controllersave");
+        String resultMessage = null;
+        int num = studentService.saveStudent(studentEntity);
+        if (num > 0) resultMessage = "新增成功" + num + "条记录";
+        else resultMessage = "新增失败";
+
+        return resultMessage;
     }
 
 }
