@@ -51,12 +51,26 @@ public class StudentController {
     @PostMapping("/saveStudent")
     public String saveStudent(StudentEntity studentEntity) {
         log.info("进入学生类controllersave");
-        String resultMessage = null;
+        String resultMessages = null;
         int num = studentService.saveStudent(studentEntity);
-        if (num > 0) resultMessage = "新增成功" + num + "条记录";
-        else resultMessage = "新增失败";
+        if (num > 0) resultMessages = "新增成功" + num + "条记录";
+        else resultMessages = "新增失败";
+
+        return resultMessages;
+    }
+
+    @PostMapping("/deleteStudent")
+    public String deleteStudent(StudentEntity studentEntity){
+        log.info("删除");
+        String resultMessage = null;
+        int num = studentService.deleteStudent(studentEntity);
+        if (num > 0)resultMessage = "删除了" + num + "条记录";
+        else resultMessage = "删除失败";
 
         return resultMessage;
+
+
     }
+
 
 }

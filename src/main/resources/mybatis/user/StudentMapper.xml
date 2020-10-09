@@ -19,7 +19,10 @@
             and user_name = #{userName}
         </if>
     </select>
-    <insert id="saveStudent" parameterType="com.neuedu.myspringboot.user.entity.StudentEntity">
-        insert into student(id, name, english, chinese, math) value('8', '张无忌', '85', '52', '38')
+    <insert id="saveStudent" parameterType="com.neuedu.myspringboot.user.entity.StudentEntity" useGeneratedKeys="true" keyProperty="id">
+        insert into student (name, chinese, english, math) value (#{name}, #{chinese}, #{english}, #{math})
     </insert>
+    <delete id="">
+
+    </delete>
 </mapper>

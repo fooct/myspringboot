@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Table(name = "student")
@@ -16,6 +17,11 @@ public class StudentEntity implements Serializable {
     private String name;
     private Integer chinese;
     private Integer math;
+    private Integer english;
+    private String note;
+    private String ids;
+
+    private List ids2;
 
 
     public static long getSerialVersionUID() {
@@ -52,5 +58,37 @@ public class StudentEntity implements Serializable {
 
     public void setMath(Integer math) {
         this.math = math;
+    }
+
+    public Integer getEnglish() {
+        return english;
+    }
+
+    public void setEnglish(Integer english) {
+        this.english = english;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public List getIds2() {
+        return ids2;
+    }
+
+    public void setIds2(List ids2) {
+        this.ids2 = ids2;
+    }
+
+    public String getIds() {
+        return ids;
+    }
+
+    public void setIds(String ids) {
+        this.ids = ids;
     }
 }
