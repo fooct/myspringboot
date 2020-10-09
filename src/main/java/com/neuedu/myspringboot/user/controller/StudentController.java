@@ -62,14 +62,15 @@ public class StudentController {
     @PostMapping("/deleteStudent")
     public String deleteStudent(StudentEntity studentEntity){
         log.info("删除");
+
         String resultMessage = null;
-        int num = studentService.deleteStudent(studentEntity);
+
+        int num = studentService.deleteStudent2(studentEntity);
+
         if (num > 0)resultMessage = "删除了" + num + "条记录";
         else resultMessage = "删除失败";
 
         return resultMessage;
-
-
     }
 
 

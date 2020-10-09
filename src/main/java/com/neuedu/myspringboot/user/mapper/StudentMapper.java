@@ -23,4 +23,6 @@ public interface StudentMapper extends tk.mybatis.mapper.common.Mapper<StudentEn
      int deleteStudent(Integer studentEntity);
 
      int deleteStudent2(String[] ids);
+
+     int deleteStudent3(List idList);
 }

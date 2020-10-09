@@ -79,5 +79,12 @@ public class StudentService {
 
     }
 
+    public int deleteStudent3(StudentEntity studentEntity){
+
+        List idList = studentEntity.getIdList();
+
+        return studentMapper.deleteStudent3(idList);
+
+    }
 
 }

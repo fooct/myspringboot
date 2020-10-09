@@ -22,7 +22,15 @@
     <insert id="saveStudent" parameterType="com.neuedu.myspringboot.user.entity.StudentEntity" useGeneratedKeys="true" keyProperty="id">
         insert into student (name, chinese, english, math) value (#{name}, #{chinese}, #{english}, #{math})
     </insert>
-    <delete id="">
+    <delete id="deleteStudent">
+        delete from student where id = #{id}
+    </delete>
 
+    <delete id="deleteStudent2" parameterType="java.util.List">
+        delete from student where id in
+        <foreach collection="array" index="index" item="item"
+                 open="(" separator="," close=")">
+            #{item}
+        </foreach>
     </delete>
 </mapper>

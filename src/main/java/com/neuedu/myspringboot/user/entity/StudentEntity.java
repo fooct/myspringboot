@@ -22,6 +22,7 @@ public class StudentEntity implements Serializable {
     private String ids;
 
     private List ids2;
+    private List IdList;
 
 
     public static long getSerialVersionUID() {
