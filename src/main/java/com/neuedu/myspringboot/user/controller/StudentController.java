@@ -74,4 +74,13 @@ public class StudentController {
     }
 
 
+    @PostMapping("/updateStudent")
+    public String updateStudent(StudentEntity studentEntity) {
+        log.info("修改");
+        String resultMessage = null;
+        int num = studentService.updateStudent(studentEntity);
+        resultMessage = "修改成功";
+        return resultMessage;
+    }
+
 }

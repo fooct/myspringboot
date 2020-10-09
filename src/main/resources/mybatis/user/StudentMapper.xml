@@ -33,4 +33,7 @@
             #{item}
         </foreach>
     </delete>
+    <update id="updateStudent" parameterType="com.neuedu.myspringboot.user.entity.StudentEntity">
+        update student set name = #{username} where id = #{id}
+    </update>
 </mapper>

@@ -87,4 +87,10 @@ public class StudentService {
 
     }
 
+    public int updateStudent(StudentEntity studentEntity) {
+
+        int id = studentEntity.getId();
+
+        return studentMapper.updateStudent(id);
+    }
 }
