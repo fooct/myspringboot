@@ -5,6 +5,10 @@ import com.neuedu.myspringboot.common.exp.Student;
 import com.neuedu.myspringboot.user.entity.StudentEntity;
 import com.neuedu.myspringboot.user.entity.StudentVO;
 import com.neuedu.myspringboot.user.service.StudentService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.relational.core.sql.In;
@@ -15,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping
 @Slf4j
+@Api(tags = "Restful 风格的学生用户模块")
 public class RestfulStudentController {
 
 
@@ -22,6 +27,11 @@ public class RestfulStudentController {
     private StudentService studentService;
     /*查询*/
     @GetMapping("/student")
+    @ApiOperation(value = "查询学生信息", notes = "介绍一下查询费向西方法", httpMethod = "GET")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "学生id", required = false, dataType = "int"),
+            @ApiImplicitParam(name = "name", value = "学生姓名", required = false, dataType = "String")
+        })
     public List<StudentEntity> queryStudent(Integer id, String name) {
         log.info("进入学生类controller");
         List<StudentEntity> studentList = studentService.queryStudent(id, name);
