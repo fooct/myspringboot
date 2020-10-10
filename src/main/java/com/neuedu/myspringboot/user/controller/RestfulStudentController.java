@@ -34,7 +34,9 @@ public class RestfulStudentController {
         })
     public List<StudentEntity> queryStudent(Integer id, String name) {
         log.info("进入学生类controller");
+        String key = "student:queryStudent:all";
         List<StudentEntity> studentList = studentService.queryStudent(id, name);
+        if (!studentList.isEmpty())   stringRedisTemplate.opsForValue().set(key, JSON.toJSONString(studentList));
         return studentList;
     }
     /*添加*/

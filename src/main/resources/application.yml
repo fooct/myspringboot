@@ -24,6 +24,20 @@ spring:
       min-evictable-idle-time-millis: 300000
       #配置一些扩展插件22
       filters: stat,wall,log4j2
+
+  redis:
+    port: 6379
+    host: localhost
+    password: dnc.2009
+    database: 8
+    timeout: 600
+    lettuce:
+      pool:
+        #连接池最大数
+        max-active: 50
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
 mybatis:
   #mapper.xml所在位置
   mapperLocations: classpath:mybatis/**/*Mapper.xml
@@ -44,5 +58,7 @@ pagehelper:
   reasonable: true      #分页合理化
   support-methods-arguments: true #是否支持接口参数来传递分页参数，默认false
   page-size-zero: true #当设置为true的时候，如果pagesize设置为0（或RowBounds的limit=0），就不执行分页，返回全部结果
+
+
 
 
