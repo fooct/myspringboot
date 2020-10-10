@@ -18,11 +18,7 @@ public class StudentEntity implements Serializable {
     private Integer chinese;
     private Integer math;
     private Integer english;
-    private String note;
-    private String ids;
 
-    private List ids2;
-    private List IdList;
 
 
 

@@ -34,6 +34,11 @@
         </foreach>
     </delete>
     <update id="updateStudent" parameterType="com.neuedu.myspringboot.user.entity.StudentEntity">
-        update student set name = #{username} where id = #{id}
+        update student
+        <set>
+            <if test="name != null and name !=' '">name = #{name},</if>
+            <if test="math != null"> math = #{math},</if>
+        </set>
+         where id = #{id}
     </update>
 </mapper>
