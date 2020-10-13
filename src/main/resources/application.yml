@@ -24,7 +24,8 @@ spring:
       min-evictable-idle-time-millis: 300000
       #配置一些扩展插件22
       filters: stat,wall,log4j2
-
+  cache:
+    type: REDIS
   redis:
     port: 6379
     host: localhost

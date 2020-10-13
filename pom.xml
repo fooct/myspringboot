@@ -123,6 +123,20 @@
         </dependency>
 
 
+        <!--引入cache-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+            <version>2.2.2.RELEASE</version>
+        </dependency>
+
+
+        <!--引入AOP切面 重复提交锁-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
 
     </dependencies>
 
